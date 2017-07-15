@@ -1,0 +1,23 @@
+{
+  "name": "smartpec-bot",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Telegram Bot",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [
+    "telegram",
+    "bot",
+    "mysql"
+  ],
+  "author": "Juan Quintero",
+  "license": "ISC",
+  "dependencies": {
+    "dedent-js": "^1.0.1",
+    "express": "^4.15.3",
+    "mysql": "^2.13.0",
+    "telegram-node-bot": "^4.0.5"
+  }
+}
