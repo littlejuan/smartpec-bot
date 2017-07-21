@@ -3,14 +3,14 @@ const TelegramBaseController = Telegram.TelegramBaseController;
 
 const form = require('../utilities/form');
 
-class SignupController extends TelegramBaseController {
+class ValidatorController extends TelegramBaseController {
     constructor(mysqlClient) {
         super();
         this._mysqlClient = mysqlClient;
     }
 
-    signupHandler($) {
-        $.runForm(form[0], (result) => {
+    validatorHandler($) {
+        $.runForm(form[1], (result) => {
             /*let sql = 'INSERT INTO Usuario SET ?';
             this._mysqlClient.query(sql, result, (err, res) => {
                 if (err) throw err;
@@ -18,17 +18,15 @@ class SignupController extends TelegramBaseController {
                 $.sendMessage('Registro exitoso!');
             }); */
             console.log(result);
-            $.sendMessage('Registro exitoso!');
-            $.sendPhoto({ url: 'https://k61.kn3.net/AEB1D0A17.jpg', filename: 'AEB1D0A17.jpg'})
-
+            $.sendMessage('Imagen enviada satisfactoriamente.');
         });
     }
 
     get routes() {
         return {
-            'signupCommand': 'signupHandler',
+            'validatorCommand': 'validatorHandler',
         }
     }
 }
 
-module.exports = mysqlClient => new SignupController(mysqlClient);
+module.exports = mysqlClient => new ValidatorController(mysqlClient);

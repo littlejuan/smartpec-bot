@@ -1,4 +1,4 @@
-const form = {
+const form = [{
     nombre: {
         q: 'Ingresa tu nombre',
         error: 'Ops! Algo ha ido mal',
@@ -56,6 +56,21 @@ const form = {
             callback(false)
         }
     }
+},
+{
+    img: {
+        q: 'Envía una imagen de tu inversión',
+        error: 'Ops! Algo ha ido mal',
+        validator: (message, callback) => {
+            if (message.messageId) {
+                callback(true, message.messageId)
+                return
+            }
+            callback(false)
+        }
+    },
 }
+
+]
 
 module.exports = form;

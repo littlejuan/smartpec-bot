@@ -6,9 +6,8 @@ class StartController extends TelegramBaseController {
 
     startHandler($) {
         let firstName = $.message._from._firstName;
-        let msg = dedent`Bienvenido ${firstName}! Opciones disponibles:
-                       /registro - Para agregar usuario.
-                       /info - Para consultar información.`;
+        let msg = dedent`Bienvenido ${firstName}! Comandos:
+                        /menu - Desplega todas las opciones disponibles.`;
         $.sendMessage(msg);
     }
     get routes() {
